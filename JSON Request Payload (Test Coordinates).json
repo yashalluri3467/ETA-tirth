@@ -1,0 +1,20 @@
+{
+  "device_id": "pilgrim_test_20.00841_73.75573",
+  "timestamp": "2026-08-29T09:45:00Z",
+  "current_location": {
+    "lat": 20.00841,
+    "lng": 73.75573
+  },
+  "destination": {
+    "lat": 19.99814,
+    "lng": 73.76912
+  },
+  "crowd_density_index": 0.5,
+  "is_festival": false,
+  "weather_severity": 0.1,
+  "traffic_density": 0.3,
+  "road_closure": false,
+  "accident_reported": false,
+  "holiday": false,
+  "include_queue_time": true
+}

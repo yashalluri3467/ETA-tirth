@@ -1,0 +1,14 @@
+{
+    "status": "success",
+    "device_id": "pilgrim_dev_104",
+    "route_distance_meters": 12967.0,
+    "base_travel_time_seconds": 2650.0,
+    "predicted_travel_time_seconds": 3840.5,
+    "predicted_queue_time_seconds": 720.0,
+    "travel_time_seconds": 4560.5,
+    "traffic_delay_factor": 1.45,
+    "remaining_distance_meters": 12967.0,
+    "eta": "2026-08-06T11:46:00Z",
+    "route_updated": true,
+    "ml_model_used": true
+}

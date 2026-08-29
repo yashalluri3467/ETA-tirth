@@ -1,0 +1,7 @@
+tirthtrack_eta_training_dataset_100000.json
+.git
+.pytest_cache
+frontend/node_modules
+__pycache__
+*.pyc
+.vs

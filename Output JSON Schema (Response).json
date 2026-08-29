@@ -1,0 +1,78 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "EtaResponse",
+    "type": "object",
+    "required": [
+        "status",
+        "device_id",
+        "route_distance_meters",
+        "travel_time_seconds",
+        "remaining_distance_meters",
+        "eta",
+        "route_updated"
+    ],
+    "properties": {
+        "status": {
+            "type": "string",
+            "pattern": "^(success|error)$",
+            "description": "Outcome status of the computation."
+        },
+        "device_id": {
+            "type": "string",
+            "description": "Device ID matching the request."
+        },
+        "route_distance_meters": {
+            "type": "number",
+            "minimum": 0.0,
+            "description": "Total route distance along road network in meters."
+        },
+        "base_travel_time_seconds": {
+            "type": "number",
+            "minimum": 0.0,
+            "default": 0.0,
+            "description": "Free-flow road network travel duration in seconds."
+        },
+        "predicted_travel_time_seconds": {
+            "type": "number",
+            "minimum": 0.0,
+            "default": 0.0,
+            "description": "XGBoost predicted road travel duration in seconds."
+        },
+        "predicted_queue_time_seconds": {
+            "type": "number",
+            "minimum": 0.0,
+            "default": 0.0,
+            "description": "XGBoost predicted temple darshan queue wait time in seconds."
+        },
+        "travel_time_seconds": {
+            "type": "number",
+            "minimum": 0.0,
+            "description": "Final total duration (predicted travel duration + predicted queue wait time) in seconds."
+        },
+        "traffic_delay_factor": {
+            "type": "number",
+            "minimum": 0.0,
+            "default": 1.0,
+            "description": "Ratio of XGBoost predicted travel duration to free-flow baseline duration."
+        },
+        "remaining_distance_meters": {
+            "type": "number",
+            "minimum": 0.0,
+            "description": "Remaining distance to destination in meters."
+        },
+        "eta": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+            "description": "Estimated arrival timestamp in ISO 8601 UTC format."
+        },
+        "route_updated": {
+            "type": "boolean",
+            "description": "True if a new route path was calculated; false if retrieved from session/cache."
+        },
+        "ml_model_used": {
+            "type": "boolean",
+            "default": false,
+            "description": "True if pre-trained XGBoost ML model artifacts were executed for prediction."
+        }
+    }
+}
